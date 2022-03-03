@@ -9,6 +9,10 @@ public class Node {
 		this.data = data;
 		this.next = null;
 	}
+	public void displayNode()
+    {
+        System.out.print(data+"  ");
+    }
 	
 	
 }

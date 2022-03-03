@@ -1,7 +1,6 @@
 package stack;
 
 import java.util.EmptyStackException;
-
 /**
  * push - this method is created to add data to stack
  * display - this method is used to display stack values
@@ -9,6 +8,7 @@ import java.util.EmptyStackException;
  * isEmpty - this method is used to check stack is empty or not
  * peek - this method returns peek element of the stack
  * size - this method returns size of the stack
+ * append - this method adds element to queue
 
 
  * @param top - accepting head pointer of LinkedList to manipulate it
@@ -23,6 +23,8 @@ public class LinkedList{
 	 * 
 	 */
 	Node top;
+	Node head;
+	Node tail;
 	public int size;
 	public void push(int data) {
 		Node newNode = new Node(data);
@@ -36,10 +38,10 @@ public class LinkedList{
 	 */
 
 	public void display() {
-		if (top == null)
+		if (head == null)
 			System.out.println("Empty stack");
 		else {
-			Node temp = top;
+			Node temp = head;
 			while (temp.next != null) {
 				System.out.print(temp.data + " - > ");
 				temp = temp.next;
@@ -85,4 +87,26 @@ public class LinkedList{
 	public int size() {
 		return size;
 	}
+	/**
+	 * append - this method adds element to queue
+	 * 
+	 */
+	public void append(int data)
+    {
+		Node newNode = new Node(data);
+	    newNode.data = data;
+	    newNode.next = null; 
+	    if(head == null) {
+	      head = newNode;
+	    } else {
+	      Node temp = newNode;
+	      temp = head;
+	      while(temp.next != null)
+	        temp = temp.next;
+	      temp.next = newNode;
+	    }  
+    }
+	
+
+		 
 }
