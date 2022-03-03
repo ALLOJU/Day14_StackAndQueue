@@ -27,6 +27,21 @@ public class Stack {
 		 * 3.Displaying the stack
 		 */
 		list.display();
-
+		/*
+		 * 4.Displaying the stack size
+		 */
+		System.out.println("Stack size is  "+list.size());
+		/*
+		 * 5.check stack empty or not 
+		 */
+		System.out.println("Stack is empty or not  "+list.isEmpty());
+		/*
+		 * 6.display peek element of the stack 
+		 */
+		System.out.println("Peek element of stack  "+list.peek());
+		/*
+		 * 7.pop element of the stack
+		 */
+		System.out.println("pop element of stack  "+list.pop());
 	}
 }
