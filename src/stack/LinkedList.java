@@ -9,6 +9,7 @@ import java.util.EmptyStackException;
  * peek - this method returns peek element of the stack
  * size - this method returns size of the stack
  * append - this method adds element to queue
+ * deque - this method used to remove element from the queue
 
 
  * @param top - accepting head pointer of LinkedList to manipulate it
@@ -22,14 +23,14 @@ public class LinkedList{
 	 * push - this method is used to create data to linkedList
 	 * 
 	 */
-	Node top;
+	//Node top;
 	Node head;
 	Node tail;
 	public int size;
 	public void push(int data) {
 		Node newNode = new Node(data);
-		newNode.next = top;
-		top = newNode;
+		newNode.next = head;
+		head = newNode;
 		size++;
 	}
 	/**
@@ -57,8 +58,8 @@ public class LinkedList{
 		if(isEmpty()) {
 			throw new EmptyStackException();
 		}
-		int result=top.data;
-		top=top.next;
+		int result=head.data;
+		head=head.next;
 		size--;
 		return result;
 	}
@@ -77,7 +78,7 @@ public class LinkedList{
 		if(isEmpty()) {
 			throw new EmptyStackException();
 		}
-		return top.data;
+		return head.data;
 
 	}
 	/**
@@ -106,7 +107,34 @@ public class LinkedList{
 	      temp.next = newNode;
 	    }  
     }
-	
+	/**
+	 * deque - this method used to remove element from the queue
+	 * 
+	 */
+	public Node  dequeue(Node head)
+    {
+		 if (head == null)
+	       System.out.println("queue is empty");
+      
+		 else{
+			 head = head.next;
+			 
+		 }
+		return head;
+ 
+    }
+	public void displayQueue(Node head) {
+        if (head == null)
+          System.out.println("No elements to display");
+        else {
+          Node temp = head;
+          while (temp.next != null) {
+          System.out.print(temp.data + " -> ");
+          temp = temp.next;
+          }
+          System.out.println(temp.data);
+        }
+    }
 
 		 
 }

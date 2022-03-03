@@ -8,6 +8,7 @@ public class Queue {
 		* PROCEDURE
 		* 1. Creating Linked list
 		  2. enqueuing to the queue
+		  3.remove elements from the begining
 		*/
 		
 		/*
@@ -22,6 +23,11 @@ public class Queue {
 		list.append(30);
 		list.append(70);
 		list.display();
+		/*
+		 * 3. dequeuing elements from the queue
+		 */
+		Node x=list.dequeue(list.head);
+		list.displayQueue(x);
 		
 	}
 	
